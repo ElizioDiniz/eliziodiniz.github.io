@@ -1,33 +1,191 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="pt-br"><!--<![endif]-->
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <title>Elizio Diniz</title>
-            <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.svg"/>
-        <link href="https://fonts.googleapis.com/css?family=Play|Lobster" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="resources/css/background-slider.css" />
-        <link rel="stylesheet" type="text/css" href="resources/css/main-style.css" />
-    </head>
-    <body id="page">
-        <ul class="cb-slideshow">
-            <li><span>01</span></li><!--slide de apresentacao -->
-        </ul>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elizio Diniz | Desenvolvedor Full Stack .NET</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7FB;--surface:#FFFFFF;--ink:#161A2E;--muted:#555B75;--line:#DCDFEA;--accent:#512BD4;--on-accent:#FFFFFF;
+  --code-bg:#1C1B2E;--code-ink:#E6E4F5;--code-kw:#A894FF;--code-str:#8FD6B0;--code-dim:#8A88A8;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#12131C;--surface:#1B1D2A;--ink:#EDEEF6;--muted:#A3A7BF;--line:#2B2E42;--accent:#9D84FF;--on-accent:#12131C;--code-bg:#0D0E16;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#12131C;--surface:#1B1D2A;--ink:#EDEEF6;--muted:#A3A7BF;--line:#2B2E42;--accent:#9D84FF;--on-accent:#12131C;--code-bg:#0D0E16;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+nav{display:flex;gap:22px;justify-content:flex-end;padding:22px 0;font-size:15px;font-weight:500;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:56px 0 88px}
+.hero h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:800;letter-spacing:-.03em}
+.hero .role{font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem;font-weight:500;color:var(--accent);margin:18px 0 20px}
+.hero p{color:var(--muted);max-width:46ch;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.main{background:var(--accent);color:var(--on-accent)}
+.btn.alt{color:var(--accent)}
+.code{background:var(--code-bg);color:var(--code-ink);border-radius:12px;padding:22px 24px;font:14px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-x:auto;margin:0}
+.code .k{color:var(--code-kw)}.code .s{color:var(--code-str)}.code .d{color:var(--code-dim)}
+.cap{font-size:13px;color:var(--muted);margin:10px 4px 0}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:32px}
+.about{max-width:68ch}
+.about p{margin:0 0 16px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:28px}
+.skills h3{font-size:1.1rem;margin-bottom:10px}
+.skills ul{list-style:none;margin:0;padding:0;color:var(--muted)}
+.skills li{padding:3px 0}
+.job{display:grid;grid-template-columns:200px 1fr;gap:32px;padding-bottom:44px}
+.job .when{color:var(--muted);font-size:15px}
+.job h3{font-size:1.4rem;margin-bottom:4px}
+.job .co{color:var(--accent);font-weight:600;margin-bottom:12px}
+.job ul{margin:0 0 12px;padding-left:20px}
+.job li{margin-bottom:6px}
+.stack{color:var(--muted);font-size:15px}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
+.proj h3{font-size:1.2rem;margin-bottom:8px}
+.proj p{margin:0 0 12px;color:var(--muted);font-size:15.5px}
+.tag{font-size:13px;font-weight:600;color:var(--accent)}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.edu h3{font-size:1.1rem;margin-bottom:6px}
+.edu p{margin:0;color:var(--muted)}
+.contact p{max-width:52ch;color:var(--muted);margin:0 0 24px}
+footer{padding:32px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:24px}
+  .job{grid-template-columns:1fr;gap:6px}
+  nav{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Principal">
+  <a href="#sobre">Sobre</a><a href="#competencias">Competências</a><a href="#experiencia">Experiência</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a>
+</nav>
 
-        <div class="container">
-                <div id="introduction">
-                    <h1>Elizio Diniz</h1>
-                        <h3></h3> <!--breve descricao -->
-                </div>
+<header class="hero">
+  <div>
+    <h1>Elizio Diniz</h1>
+    <div class="role">Desenvolvedor Full Stack .NET (C#)</div>
+    <p>Sete anos construindo sistemas corporativos, APIs e integrações para o setor financeiro e de previdência privada. Em Belo Horizonte, aberto a novos segmentos.</p>
+    <div class="btns">
+      <a class="btn main" href="#contato">Entrar em contato</a>
+      <a class="btn alt" href="https://github.com/ElizioDiniz" rel="noopener">Ver GitHub</a>
+    </div>
+  </div>
+  <div>
+<pre class="code" aria-label="Exemplo de código em C#"><span class="d">// Receber um pagamento Pix</span>
+<span class="k">[HttpPost("pix")]</span>
+<span class="k">public async</span> Task&lt;IActionResult&gt; Pagar(PixDto dto)
+{
+    <span class="k">var</span> cobranca = <span class="k">await</span> _pix.CriarAsync(dto);
+    <span class="k">return</span> Ok(cobranca.Id);
+}</pre>
+    <p class="cap">Exemplo ilustrativo, escrito para este site.</p>
+  </div>
+</header>
 
-                <div id="contacts">
-                        <a href="mailto:dinizelizio16@gmail.com" target="_blank"><img src="resources/images/email-logo.svg" id="email" class="logo" title="E-mail (dinizelizio16@gmail.com)"></a>
-                        <a href="https://github.com/eliziodiniz" target="_blank"><img src="resources/images/github-logo.svg" id="github" class="logo" title="Github"></a>
-                </div>
-        </div>
-    </body>
+<section id="sobre">
+  <h2>Sobre</h2>
+  <div class="about">
+    <p>Trabalho em todo o ciclo de desenvolvimento: levanto requisitos com clientes e áreas de negócio, escrevo a especificação técnica, desenvolvo, integro, testo e mantenho.</p>
+    <p>Entendo o problema do cliente antes de escrever o código. Isso reduz retrabalho e melhora a entrega.</p>
+    <p>Busco vaga como Desenvolvedor .NET, Full Stack ou C#, em previdência ou em outros segmentos.</p>
+  </div>
+</section>
+
+<section id="competencias">
+  <h2>Competências</h2>
+  <div class="skills">
+    <div><h3>Back-end</h3><ul><li>C#</li><li>.NET e .NET Framework</li><li>ASP.NET MVC</li><li>Java</li></ul></div>
+    <div><h3>Front-end</h3><ul><li>JavaScript</li><li>HTML</li><li>CSS</li></ul></div>
+    <div><h3>Integrações</h3><ul><li>APIs REST</li><li>Serviços externos</li><li>Integração entre sistemas</li></ul></div>
+    <div><h3>Dados e ferramentas</h3><ul><li>SQL e SQL Server</li><li>Bancos relacionais</li><li>Git</li></ul></div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <h2>Experiência</h2>
+  <div class="job">
+    <div class="when">Maio de 2019 a Agosto de 2025<br>6 anos e 4 meses</div>
+    <div>
+      <h3>Analista de Sistema Pleno</h3>
+      <div class="co">Sinqia, Belo Horizonte, MG</div>
+      <p style="margin:0 0 10px">Desenvolvimento e manutenção de sistemas de previdência privada em C#, .NET Framework, ASP.NET MVC e SQL.</p>
+      <ul>
+        <li>Desenvolvi o módulo de cadastro e gestão de pessoas físicas, adequado à LGPD.</li>
+        <li>Implementei pagamentos via Pix, integrando com APIs de terceiros.</li>
+        <li>Criei e mantive integrações REST entre sistemas e serviços externos.</li>
+        <li>Levantei requisitos e escrevi especificações técnicas junto a clientes e áreas de negócio.</li>
+      </ul>
+      <div class="stack">C#, .NET, ASP.NET MVC, SQL Server, JavaScript, APIs REST, Git</div>
+    </div>
+  </div>
+  <div class="job">
+    <div class="when">Setembro de 2018 a Maio de 2019<br>9 meses</div>
+    <div>
+      <h3>Programador de Software</h3>
+      <div class="co">Computação Brasil, Salvador, BA</div>
+      <ul><li>Desenvolvi microsserviços para a FAPEX (Fundação de Apoio à Pesquisa e à Extensão).</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <h2>Projetos</h2>
+  <div class="projects" id="lista"></div>
+</section>
+
+<section>
+  <h2>Formação e certificações</h2>
+  <div class="edu">
+    <div><h3>Análise e Desenvolvimento de Sistemas</h3><p>Graduação tecnológica, IFBA (Instituto Federal da Bahia), 2018 a 2019</p></div>
+    <div><h3>Foundational C# with Microsoft</h3><p>Certificação, freeCodeCamp</p></div>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <h2>Vamos conversar</h2>
+  <p>Estou procurando uma vaga como desenvolvedor .NET. Escreva para mim ou me chame no LinkedIn.</p>
+  <div class="btns">
+    <a class="btn main" href="mailto:dinizelizio16@gmail.com">dinizelizio16@gmail.com</a>
+    <a class="btn alt" href="https://linkedin.com/in/elizio-diniz" rel="noopener">LinkedIn</a>
+    <a class="btn alt" href="https://github.com/ElizioDiniz" rel="noopener">GitHub</a>
+  </div>
+</section>
+<footer>© Elizio Diniz. Belo Horizonte, Minas Gerais.</footer>
+</div>
+
+<script>
+// Edite esta lista com seus projetos reais e os links dos repositórios.
+var projetos=[
+ {t:"API de pagamentos Pix",d:"API REST em .NET que cria cobranças e recebe a confirmação de pagamento, com testes automatizados.",s:"C#, .NET, SQL Server",u:"https://github.com/ElizioDiniz/api-pix"},
+ {t:"Cadastro de pessoas com LGPD",d:"Sistema ASP.NET MVC de cadastro com consentimento, trilha de auditoria e anonimização de dados.",s:"C#, ASP.NET MVC, SQL",u:"https://github.com/ElizioDiniz/cadastro-lgpd"},
+ {t:"Simulador de previdência",d:"Calculadora de contribuição e saldo projetado, com API e tela em JavaScript.",s:"C#, JavaScript, HTML, CSS",u:"https://github.com/ElizioDiniz/simulador-previdencia"}
+];
+var el=document.getElementById("lista");
+projetos.forEach(function(p){
+  var a=document.createElement("article");a.className="proj";
+  a.innerHTML='<h3></h3><p></p><div class="tag"></div>';
+  a.querySelector("h3").textContent=p.t;
+  a.querySelector("p").textContent=p.d;
+  var tag=a.querySelector(".tag");
+  var l=document.createElement("a");l.href=p.u;l.rel="noopener";l.textContent="Ver código no GitHub";
+  tag.textContent=p.s+" · ";tag.appendChild(l);
+  el.appendChild(a);
+});
+</script>
+</body>
 </html>
